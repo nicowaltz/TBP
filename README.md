@@ -2,11 +2,13 @@
 
 TBP is a browser-based, offline text editor.
 
-To install (requires node): ```
+To install (requires node): 
+```
     npm install
 ```
     
-To run: ```
+To run: 
+```
     node server.js [optional port]
 ```
 
