@@ -1,0 +1,13 @@
+{
+  "name": "TBP",
+  "version": "1.0.0",
+  "description": "Textbearbeitungsprogramm",
+  "main": "server.js",
+  "repository": "TBP",
+  "license": "MIT",
+  "author": "Nicholas P. Waltz",
+  "dependencies": {
+    "express": "4.15.4",
+    "http": "^0.0.0"
+  }
+}

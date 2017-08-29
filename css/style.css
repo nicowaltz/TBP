@@ -1,0 +1,162 @@
+* {
+  outline: none;
+}
+
+body, html {
+  font: 14px arial, sans-serif;
+  margin: 0;
+  min-width: 700px;
+
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  overflow-y: scroll;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 32px auto 32px;
+  grid-template-areas:
+   "tview tabs"
+   "tview editor"
+   "tview info";
+}
+
+.info {
+  grid-area: info;
+  border-top: 1px solid #dfe2e5;
+  font: 12px 'Menlo', 'Courier New', monospace;
+  line-height: 32px;
+  padding: 0 15px;
+  text-align: right;
+
+}
+
+.tree-view {
+  grid-area: tview;
+  border-right: 1px solid #dfe2e5;
+  overflow: scroll;
+}
+
+.tabs {
+  grid-area: tabs;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.tab {
+  background: #f1f8ff;
+  line-height: 31px;
+  padding: 0 15px;
+  border-right: 1px solid #c8e1ff;
+  display: inline-block;
+  cursor: pointer;
+}
+.tab .text {
+  display: inline-block;
+}
+
+.tab .close {
+  color: black;
+  font: monospace;
+  display: inline-block;
+  margin-left: 16px;
+  vertical-align: middle;
+  padding: 2px;
+  line-height: 8px;
+  width: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+
+}
+
+.tab .close:hover {
+  background: #e34c26;
+  color: #fff;
+}
+
+.editor {
+  grid-area: editor;
+  overflow: scroll;
+}
+
+.icon {
+  color: #8197b0;
+  fill: #8197b0;
+}
+
+.folder {
+  color: #6a737d;
+}
+
+.file {
+  color: #0366d6;
+}
+
+
+.wrapper {
+  margin: 24px auto;
+  font: 12px 'Menlo', 'Courier New', monospace;
+  line-height: 20px;
+  width: calc(100% - 48px);
+  overflow: scroll;
+  border: 1px solid #e1e4e8;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: 48px auto;
+  grid-template-rows: 32px auto;
+  grid-template-areas:
+   "head head"
+   "gutter edit";
+}
+
+.editor-head {
+  background: #fafbfc;
+  border-bottom: 1px solid #e1e4e8;
+  line-height: 31px;
+  padding: 0 72px;
+  grid-area: head;
+
+}
+
+.placeholder {
+  height: 50vh;
+}
+
+.gutter {
+  grid-area: gutter;
+  padding: 24px 0;
+  color: rgba(27,31,35,0.3);
+  text-align: right;
+  max-height: 420px;
+  overflow-y: hidden;
+  overflow-x: scroll; 
+}
+
+#editor {
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */ 
+  line-height: 20px;
+  grid-area: edit;
+  max-width: 100%;
+  overflow: scroll;
+  min-height: 420px; /* it's funny, 'cause weed */
+  padding: 24px;
+
+}
+
+.info > div {
+  display: inline-block;
+}
+
+.desc, .prop {
+  display: inline;
+}
+
+.prop {
+  cursor: pointer;
+  color: #0366d6;
+}
