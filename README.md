@@ -2,7 +2,9 @@
 
 TBP is a browser-based, offline text editor.
 
-To install (requires node): 
+Requires nodejs and browser that [supports css grid](http://caniuse.com/#feat=css-grid).
+
+To install: 
 ```
     npm install
 ```
