@@ -5,10 +5,14 @@
   <title>TBP</title>
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/jq.js"></script>
+  <script src="/js/editor.js"></script>
 </head>
 <body>
 
 <div class="tree-view">
+  <div class="menu">
+    <div id="open">Open</div><div id="new">New</div>
+  </div>
   <svg aria-hidden="true" class="icon" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
   <svg aria-hidden="true" class="icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
 </div>
@@ -25,7 +29,9 @@
 <div class="editor">
   
   <div class="wrapper">
-    <div class="editor-head">he</div>
+    <div class="editor-head">
+          <span id="name">New File</span>|<span id="lines">0 lines</span>|<span id="size">0 kB</span>
+    </div>
     <div class="gutter">
       <div data-line="1">1</div>
       <div data-line="2">2</div>
@@ -439,15 +445,23 @@
 
 <div class="info">
   <div id="syntax">
+    <div class="sel">
+      <div class="option" data-tab="0">Tab</div>
+      <div class="option" data-tab="4">4 Spaces</div>
+      <div class="option" data-tab="2">2 Spaces</div>
+    </div>
     <div class="desc">Syntax: </div>
     <div class="prop">Plain Text</div>
   </div>
 
-
-
   <div id="tabs">
+    <div class="sel">
+      <div class="option" data-tab="0">Tab</div>
+      <div class="option" data-tab="4">4 Spaces</div>
+      <div class="option" data-tab="2">2 Spaces</div>
+    </div>
     <div class="desc">Tabs: </div>
-    <div class="prop">2 Spaces</div>
+    <div class="prop">2 Spaces</div> 
   </div>
 </div>
 </body>

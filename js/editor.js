@@ -21,3 +21,51 @@ function cursorOffset(element) {
     }
     return caretOffset;
 }
+
+
+$(function() {
+    var $editor = $("#editor"),
+        $gutter = $(".gutter"),
+        $lines = $("#lines"),
+        $size = $("#size"),
+        $name = $("#name"),
+        $tabs = $(".tabs"),
+        lines = 0,
+        tab = "  ",
+        indent = 0,
+        indentDistance = 0,
+        enterDistance = 0,
+        buf = "";
+
+
+
+
+    function main(e) {
+        switch (e.keyCode) {
+            case 9:
+                document.execCommand('insertHTML', false, tab);
+                indent++;
+                e.preventDefault();
+                break;
+
+            case 13:
+                lines++;
+                $lines.text(lines + " lines");
+                
+                break;
+
+            default: 
+                break;
+
+        }
+
+    }
+
+
+    $("#tabs .prop").on("click", function() {
+        $(this).siblings(".sel").toggle();
+    });
+
+
+    $editor.on("keydown", main);
+});

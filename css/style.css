@@ -1,5 +1,7 @@
 * {
   outline: none;
+  -ms-overflow-style: none;
+
 }
 
 body, html {
@@ -23,18 +25,34 @@ body {
 
 .info {
   grid-area: info;
+  position: relative;
   border-top: 1px solid #dfe2e5;
   font: 12px 'Menlo', 'Courier New', monospace;
   line-height: 32px;
-  padding: 0 15px;
+  padding: 0 24px;
   text-align: right;
-
+  user-select: none;
 }
 
 .tree-view {
   grid-area: tview;
   border-right: 1px solid #dfe2e5;
   overflow: scroll;
+}
+
+.menu {
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.menu > div {
+  line-height: 31px;
+  padding: 0 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menu > div:hover {
+  background: #f1f8ff;
 }
 
 .tabs {
@@ -99,7 +117,6 @@ body {
   font: 12px 'Menlo', 'Courier New', monospace;
   line-height: 20px;
   width: calc(100% - 48px);
-  overflow: scroll;
   border: 1px solid #e1e4e8;
   border-radius: 2px;
   display: grid;
@@ -116,7 +133,16 @@ body {
   line-height: 31px;
   padding: 0 72px;
   grid-area: head;
+  color: #e1e4e8;
+}
 
+.editor-head span {
+  margin: 0 8px;
+  color: black;
+}
+
+.editor-head span:first-child {
+  margin-left: 0;
 }
 
 .placeholder {
@@ -130,7 +156,6 @@ body {
   text-align: right;
   max-height: 420px;
   overflow-y: hidden;
-  overflow-x: scroll; 
 }
 
 #editor {
@@ -138,18 +163,19 @@ body {
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
-  word-wrap: break-word; /* Internet Explorer 5.5+ */ 
   line-height: 20px;
   grid-area: edit;
   max-width: 100%;
-  overflow: scroll;
   min-height: 420px; /* it's funny, 'cause weed */
   padding: 24px;
 
 }
 
+
 .info > div {
+  position: relative;
   display: inline-block;
+  margin-left: 24px;
 }
 
 .desc, .prop {
@@ -159,4 +185,44 @@ body {
 .prop {
   cursor: pointer;
   color: #0366d6;
+}
+
+.sel {
+  display: none;
+  position: absolute;
+  bottom: 33px;
+  right: -17px;
+  text-align: left;
+  background: #fafbfc;
+  border-top: 1px solid #e1e4e8;
+  border-left: 1px solid #e1e4e8;
+  border-right: 1px solid #e1e4e8;
+}
+
+.sel .option {
+  line-height: 24px;
+  padding: 0 16px;
+  color: black;
+  cursor: pointer;
+  display: block;
+}
+
+.sel .option:hover {
+  background: #f1f8ff;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+::scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+::scrollbar-thumb {
+    background: transparent;
 }
