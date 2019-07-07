@@ -1,3 +1,5 @@
+unfinished and possibly discontinued
+
 # TBP
 
 TBP is a browser-based, offline text editor.
